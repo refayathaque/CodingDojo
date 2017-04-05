@@ -40,4 +40,4 @@ for(var x=0; x<array.length; x++)
   }
 }
 
-console.log(array) // Outputs [1, 3, 4, 5], no idea how...
+console.log(array) // Outputs [1, 3, 4, 5]
