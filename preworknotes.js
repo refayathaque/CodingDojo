@@ -52,3 +52,29 @@ while (x < 10)
 }
 
 console.log(number); // Outputs STRING '56789'
+
+// Function that would get the sum of all even numbers from 1 to 1000.
+
+function get_even_numbers() {
+  var sum = 0; // Our container
+  for(var i = 1; i < 1001; i++) {
+    if(i % 2 == 0) { // If function asked for odd instead of even do 'i % 2 != 0'
+      sum += i; // Same as sum = sum + i
+    }
+  }
+  console.log(sum);
+}
+
+get_even_numbers();
+
+// Function that would iterate over an array and get the sum of all elements.
+
+function arrayiteration(arr) {
+  var sum1 = 0;
+  for(var i = 0; i < arr.length; i++){ // Iterate over ARRAYs with indexing
+    sum1 += arr[i];
+  }
+  console.log(sum1);
+}
+
+arrayiteration([1, 2, 3, 4]);
