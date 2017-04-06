@@ -33,7 +33,7 @@ for(var x=0; x<array.length; x++)
   {
     if(array[x] > array[y])
     {
-      var temp = array[y];
+      var temp = array[y]; // MUTATES THE CALLER! Modifies var array permanently
       array[y] = array[x];
       array[x] = temp;
     }
@@ -41,3 +41,14 @@ for(var x=0; x<array.length; x++)
 }
 
 console.log(array) // Outputs [1, 3, 4, 5]
+
+var number = ''; // Empty STRING
+var x = 5;
+
+while (x < 10)
+{
+  number += x; // String CONCATENATION
+  x++;
+}
+
+console.log(number); // Outputs STRING '56789'
