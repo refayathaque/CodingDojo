@@ -145,3 +145,32 @@ function oddNumbers() {
 }
 
 oddNumbers()
+
+// Function that takes an array and returns the number of values that are greater
+// than a specific number, Y in this problem.
+
+function greaterY(arr, Y) {
+  countarr = [];
+  for(var x = 0; x < arr.length; x++) {
+    if(arr[x] > Y) {
+      countarr.push(arr[x]);
+    }
+  }
+  console.log(countarr.length);
+}
+
+greaterY([1, 2, 3, 4, 5, 7, 11], 3) // Outputs 4
+
+// There's an easier way to do the problem above:
+
+function greaterY(arr, Y) {
+  count = 0;
+  for(var x = 0; x < arr.length; x++) {
+    if(arr[x] > Y) {
+      count++;
+    }
+  }
+  console.log(count);
+}
+
+greaterY([1, 4, 7, 6], 3)
