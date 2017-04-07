@@ -174,3 +174,18 @@ function greaterY(arr, Y) {
 }
 
 greaterY([1, 4, 7, 6], 3)
+
+// Function that returns a new array with the SQUARED values of elements of array
+// passed in.
+
+function square(arr) {
+var squarearr = [];
+var sqvalue = 0;
+for(var x = 0; x < arr.length; x++) {
+  sqvalue = arr[x] * arr[x];
+  squarearr[x] = sqvalue;
+}
+  console.log(squarearr);
+}
+
+square([2, 3, 4, 5])
