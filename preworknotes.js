@@ -78,3 +78,43 @@ function arrayiteration(arr) {
 }
 
 arrayiteration([1, 2, 3, 4]);
+
+// Function that prints the maximum (highest) number in an array
+
+function findMax(arr) {
+    var max = '';
+    arrsorted = arr.sort(function(a, b){return a - b});
+    max = arrsorted.pop();
+    console.log(max);
+}
+
+findMax([1, 657, 2, 87]);
+
+// Another way to do the same thing above without the sort method is:
+
+function findMax(arr) {
+  var max = arr[0];
+  for(var x = 0; x<arr.length; x++) {
+    if(max < arr[x]) { // 'if(max < arr[x]); {' has semi colon, and results in
+                       // DIFFERENT output, we get 2 instead of 6.
+      max = arr[x];
+    }
+  }
+  console.log(max);
+}
+
+findMax([1, 6, 3, 2]);
+
+// Let's explain why having a semi colon after the round brackets above gives is
+// a different output.
+
+// According to (https://www.codecademy.com/blog/78) 'a semicolon after the round
+// backets of an if, for, while, or switch statment is a bad idea'. As is demonstrated
+// below.
+
+// if (0 === 1); {alert("hi")}
+
+// Code above will alert "hi", but not because 0 === 1, but because of the semicolon.
+// It makes JS think that you have an empty statement there, and everything to the
+// right of it is treated as no longer belonging to the 'if' conditional and thus
+// independent of it.
