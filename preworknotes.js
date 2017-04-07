@@ -282,3 +282,16 @@ function swap(arr) {
 }
 
 swap([8, 7, 5, 2])
+
+// Function that replaces negative integers in array with string.
+
+function swapwithstring(arr) {
+for(var x = 0; x < arr.length; x++) {
+  if(arr[x] < 0) {
+    arr[x] = 'Dojo'
+  }
+}
+  console.log(arr);
+}
+
+swapwithstring([1, -2, 3, -4])
