@@ -94,7 +94,7 @@ findMax([1, 657, 2, 87]);
 
 function findMax(arr) {
   var max = arr[0];
-  for(var x = 0; x<arr.length; x++) {
+  for(var x = 1; x<arr.length; x++) {
     if(max < arr[x]) { // 'if(max < arr[x]); {' has semi colon, and results in
                        // DIFFERENT output, we get 2 instead of 6.
       max = arr[x];
@@ -118,3 +118,30 @@ findMax([1, 6, 3, 2]);
 // It makes JS think that you have an empty statement there, and everything to the
 // right of it is treated as no longer belonging to the 'if' conditional and thus
 // independent of it.
+
+// Function that gets the avergae of multiple elements in an array
+
+function findAvg(arr) {
+  var sum = 0; // Can't use var sum = ''; because then it'll be a string and
+               // we wouldn't have been able to do arithmetic to add up elements
+  for(var x = 0; x<arr.length; x++) {
+      sum += arr[x];
+  }
+  console.log(sum/arr.length);
+}
+
+findAvg([1, 6, 3, 2]);
+
+// Function to get an array of odd numbers
+
+function oddNumbers() {
+  var arr = [];
+  for(var x = 1; x < 51; x++) {
+    if(x % 2 != 0) {
+      arr.push(x);
+    }
+  }
+  console.log(arr)
+}
+
+oddNumbers()
