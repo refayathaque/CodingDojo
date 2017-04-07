@@ -189,3 +189,57 @@ for(var x = 0; x < arr.length; x++) {
 }
 
 square([2, 3, 4, 5])
+
+// There's an easier way to do what's above... if you want to just MODIFY the array
+// you originally passed in, and DON'T WANT A NEW SEPARATE ARRAY with squared values.
+
+function square(arr) {
+  for(var x = 0; x < arr.length; x++) {
+    arr[x] = arr[x] * arr[x]
+  }
+  console.log(arr)
+}
+
+square([6, 7, 8, 9])
+
+// Function that replaces negative integers in an array with zeros.
+
+function noNeg(arr) {
+for(var x = 0; x < arr.length; x++) { // For some reason this will also work
+                                      // without 'var'...
+  if(arr[x] < 0) {
+    arr[x] = 0;
+  }
+}
+  console.log(arr);
+}
+
+noNeg([-2, 1, 2, 3, -6])
+
+// Function that returns a new array containing the MAX, MIN, and AVG of the
+// array passed in.
+
+function maxMinAvg(arr) {
+var sum = 0;
+var avg = 0;
+var max = arr[0];
+var min = arr[0];
+var newarr = [];
+for(var i = 1; i < arr.length; i++) {
+  if(max < arr[i]) {
+    max = arr[i];
+  }
+}
+for(var i = 1; i < arr.length; i++) {
+  if(min > arr[i]) {
+    min = arr[i];
+  }
+}
+for(var i = 0; i < arr.length; i++) {
+  sum += arr[i];
+  avg = sum/arr.length;
+}
+newarr.push(max, min, avg);
+console.log(newarr);
+}
+maxMinAvg([1, 2, 3, 4, 5, 6]);
