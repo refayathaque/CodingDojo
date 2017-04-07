@@ -220,11 +220,13 @@ noNeg([-2, 1, 2, 3, -6])
 // array passed in.
 
 function maxMinAvg(arr) {
-var sum = 0;
-var avg = 0;
+var sum = 0; // Must be changed to 'var sum = arr[0]' is same loop is used
+var avg = 0; // Can also just initialize array and populate it by
+             // doing 'var avg = sum/arr.length;'.
 var max = arr[0];
 var min = arr[0];
-var newarr = [];
+var newarr = []; // Can also just initialize array and populate it by
+                 // doing 'var newarr = [max, min, avg];'.
 for(var i = 1; i < arr.length; i++) {
   if(max < arr[i]) {
     max = arr[i];
@@ -239,7 +241,44 @@ for(var i = 0; i < arr.length; i++) {
   sum += arr[i];
   avg = sum/arr.length;
 }
-newarr.push(max, min, avg);
+newarr.push(max, min, avg); // Can also just initialize array and populate it by
+                            // doing 'var newarr = [max, min, avg];'.
 console.log(newarr);
 }
 maxMinAvg([1, 2, 3, 4, 5, 6]);
+
+// Refactoring the code above... We can just have one for loop since they're all
+// the same.
+
+function maxMinAvg(arr) {
+  var min = arr[0];
+  var max = arr[0];
+  var sum = arr[0];
+  for(var i = 1; i < arr.length; i++) {
+    if(max < arr[i]) {
+      max = arr[i];
+    }
+    if(min > arr[i]) {
+      min = arr[i];
+    }
+    sum += arr[i];
+  }
+  var avg = sum/arr.length; // var can't be initialized above with other variables,
+                            // 'sum' is being modified by code in for loop, so this
+                            // has to be initialized AFTER the for loop.
+  var newarr = [max, min, avg];
+  console.log(newarr);
+}
+
+maxMinAvg([1, 2, 3, 4, 5, 6]);
+
+// Function that swaps the first and last values of an array passed.
+
+function swap(arr) {
+  var swaptemp = arr[0];
+  arr[0] = arr[arr.length - 1];
+  arr[arr.length - 1] = swaptemp;
+  console.log(arr);
+}
+
+swap([8, 7, 5, 2])
