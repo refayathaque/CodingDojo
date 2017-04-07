@@ -1,11 +1,24 @@
-function greaterY(arr, Y) {
-  count = 0;
-  for(var x = 0; x < arr.length; x++) {
-    if(arr[x] > Y) {
-      count++;
-    }
+function maxMinAvg(arr) {
+var sum = 0;
+var avg = 0;
+var max = arr[0];
+var min = arr[0];
+var newarr = [];
+for(var i = 1; i < arr.length; i++) {
+  if(max < arr[i]) {
+    max = arr[i];
   }
-  console.log(count);
 }
-
-greaterY([1, 4, 7, 6], 3)
+for(var i = 1; i < arr.length; i++) {
+  if(min > arr[i]) {
+    min = arr[i];
+  }
+}
+for(var i = 0; i < arr.length; i++) {
+  sum += arr[i];
+  avg = sum/arr.length;
+}
+newarr.push(max, min, avg);
+console.log(newarr);
+}
+maxMinAvg([1, 2, 3, 4, 5, 6]);
