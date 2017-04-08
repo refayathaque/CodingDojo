@@ -310,3 +310,12 @@ function sum_odd(arr) {
 }
 
 sum_odd([0]);
+
+// Example of 'break'; it exits out of the entire loop. It won't continue
+// iterations if inside a for loop block, will only execute the first iteration.
+
+for(var x = 17; x > 7; x--)
+{
+  console.log(x); // Outputs 17
+  break;
+}
