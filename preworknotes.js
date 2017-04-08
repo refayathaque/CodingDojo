@@ -295,3 +295,18 @@ for(var x = 0; x < arr.length; x++) {
 }
 
 swapwithstring([1, -2, 3, -4])
+
+// Function that goes through a range of numbers and gives the sum of all
+// odd numbers
+
+function sum_odd(arr) {
+  var sum = 0;
+  for(var i = 3; i < 10; i++) {
+    if(i % 2 != 0) {
+      sum += i;
+    }
+  }
+  console.log(sum); // Outputs 24
+}
+
+sum_odd([0]);
