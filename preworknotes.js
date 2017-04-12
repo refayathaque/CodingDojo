@@ -12,51 +12,53 @@ function greetSomeone(person){
     console.log("Hey there other guy!");
   }
 }
-
 greetSomeone("Refayat") //Hey there Refayat!
 greetSomeone("refayat") //Hey there Refayat!
 greetSomeone("George") //Hey there other guy!
 
 console.log('----');
 
+//Function printing string passed in
 function printMyName(name){
   console.log(name);
 }
+printMyName('Refayat'); //Refayat
 
-printMyName("John")
+var othername = printMyName('Harry'); //Harry
+console.log(othername); //Undefined..not sure why
+//Bc function call can't be assigned to var?
 
-var othername = printMyName("Harry")
-console.log(othername); // Outputs 'undefined', not really sure why...
+console.log('----');
 
-// The most difficult challenge yet in the Algorithms App
-
-var array = [5, 3, 4, 1]
-
-for(var x=0; x<array.length; x++)
+//Most difficult Algorithm Challenge
+var array = [5, 3, 4, 1];
+for(var x=0; x<array.length; x++) //for(var x=0; x<4; x++)
 {
-  for(var y=array.length-1; y>=x; y--)
+  for(var y=array.length-1; y>=x; y--) //for(var y=3; y>=x; y--)
   {
     if(array[x] > array[y])
     {
-      var temp = array[y]; // MUTATES THE CALLER! Modifies var array permanently
+      var temp = array[y]; //MUTATES THE CALLER! Modifies 'var array'
       array[y] = array[x];
       array[x] = temp;
     }
   }
 }
+console.log(array) //[1, 3, 4, 5]
 
-console.log(array) // Outputs [1, 3, 4, 5]
+console.log('----');
 
-var number = ''; // Empty STRING
+//Function CONCATENATING integers
+var number = ''; //Empty STRING
 var x = 5;
-
 while (x < 10)
 {
-  number += x; // String CONCATENATION
+  number += x; //String CONCATENATION
   x++;
 }
+console.log(number); //STRING '56789'
 
-console.log(number); // Outputs STRING '56789'
+console.log('----');
 
 // Function that would get the sum of all even numbers from 1 to 1000.
 
