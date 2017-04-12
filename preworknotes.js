@@ -32,9 +32,9 @@ console.log('----');
 
 //Most difficult Algorithm Challenge
 var array = [5, 3, 4, 1];
-for(var x=0; x<array.length; x++) //for(var x=0; x<4; x++)
+for(var x = 0; x < array.length; x++) //for(var x=0; x<4; x++)
 {
-  for(var y=array.length-1; y>=x; y--) //for(var y=3; y>=x; y--)
+  for(var y = array.length-1; y >= x; y--) //for(var y=3; y>=x; y--)
   {
     if(array[x] > array[y])
     {
@@ -60,45 +60,50 @@ console.log(number); //STRING '56789'
 
 console.log('----');
 
-// Function that would get the sum of all even numbers from 1 to 1000.
-
+//Function to get sum of even numbers from 1 to 1000
 function get_even_numbers() {
-  var sum = 0; // Our container
-  for(var i = 1; i < 1001; i++) {
-    if(i % 2 == 0) { // If function asked for odd instead of even do 'i % 2 != 0'
-      sum += i; // Same as sum = sum + i
+  var sum = 0;
+  for(var i = 1; i <= 1000; i++) { //or 'i < 1001'
+    if(i % 2 == 0) { //for odd 'i % 2 != 0'
+      sum += i; //Same as sum = sum + i
     }
   }
-  console.log(sum);
+  console.log(sum); //250500
 }
-
 get_even_numbers();
 
-// Another example of a function getting the sum of a set of even numbers.
+console.log('----');
 
-function sum_even(arr){
+//Function to get sum of even numbers in a given array
+function array_EvenSum(arr) {
   var sum = 0;
-  for(var x = 9; x < 88; x++){
-    if(x % 2 == 0){
-    sum += x;
+  for(var i = 0; i < arr.length; i++) { //Iterates with indexing
+    if(arr[i] % 2 == 0) {
+      sum += arr[i];
     }
   }
-console.log(sum);
+  console.log(sum); //12
 }
+array_EvenSum([1, 2, 3, 4, 5, 6]);
 
-sum_even([]);
+console.log('----');
 
-// Function that would iterate over an array and get the sum of all elements.
-
-function arrayiteration(arr) {
-  var sum1 = 0;
-  for(var i = 0; i < arr.length; i++){ // Iterate over ARRAYs with indexing
-    sum1 += arr[i];
+//Function to get sum of elements in a given array
+function array_SumElements(arr) {
+  var sum = '';
+  for(var i = 0; i < arr.length; i++) {
+    sum += arr[i]; //Integer converts to String and is CONCATENATED
   }
-  console.log(sum1);
+  console.log(sum); //Hello1Goodbye2
 }
+array_SumElements(['Hello', 1, 'Goodbye', 2]);
 
-arrayiteration([1, 2, 3, 4]);
+console.log('----');
+
+
+
+
+
 
 // Function that prints the maximum (highest) number in an array
 
