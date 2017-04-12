@@ -1,3 +1,6 @@
+//NOTES FROM PREWORK ALGORITHM CHALLENGES
+
+//Function printing strings based on conditional
 function greetSomeone(person){
   var person1 = person.toLowerCase();
   if (person1 == "refayat")
@@ -10,9 +13,11 @@ function greetSomeone(person){
   }
 }
 
-greetSomeone("Refayat")
-greetSomeone("refayat")
-greetSomeone("George")
+greetSomeone("Refayat") //Hey there Refayat!
+greetSomeone("refayat") //Hey there Refayat!
+greetSomeone("George") //Hey there other guy!
+
+console.log('----');
 
 function printMyName(name){
   console.log(name);
@@ -66,6 +71,20 @@ function get_even_numbers() {
 }
 
 get_even_numbers();
+
+// Another example of a function getting the sum of a set of even numbers.
+
+function sum_even(arr){
+  var sum = 0;
+  for(var x = 9; x < 88; x++){
+    if(x % 2 == 0){
+    sum += x;
+    }
+  }
+console.log(sum);
+}
+
+sum_even([]);
 
 // Function that would iterate over an array and get the sum of all elements.
 
