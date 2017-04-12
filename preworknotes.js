@@ -124,64 +124,78 @@ findMax([1, 4, 3, 2, 8, 6, -3]);
 
 console.log('----');
 
-// Let's explain why having a semi colon after the round brackets above gives is
-// a different output.
+/* (https://www.codecademy.com/blog/78) 'a semicolon after the round
+backets of an if, for, while, or switch statment is a bad idea'.
 
-// According to (https://www.codecademy.com/blog/78) 'a semicolon after the round
-// backets of an if, for, while, or switch statment is a bad idea'. As is demonstrated
-// below.
+var x = 5
+var y = 5
+if (x === y); {alert("hi")}
 
-// if (0 === 1); {alert("hi")}
+Code above will alert "hi", NOT BC x === y, but bc of the semicolon. The ;
+makes JS think that you have an EMPTY STATEMENT there, so everything to
+the right of the ; becomes INDEPENDENT of the 'if' conditional. */
 
-// Code above will alert "hi", but not because 0 === 1, but because of the semicolon.
-// It makes JS think that you have an empty statement there, and everything to the
-// right of it is treated as no longer belonging to the 'if' conditional and thus
-// independent of it.
-
-// Function that gets the avergae of multiple elements in an array
-
+//Function to get the average of elements in a given array
 function findAvg(arr) {
-  var sum = 0; // Can't use var sum = ''; because then it'll be a string and
-               // we wouldn't have been able to do arithmetic to add up elements
-  for(var x = 0; x<arr.length; x++) {
-      sum += arr[x];
+  var sum = 0;
+  for(x = 0; x < arr.length; x++) {
+    sum += arr[x]
   }
-  console.log(sum/arr.length);
+  console.log(sum/arr.length) //2.5
 }
+findAvg([1, 2, 3, 4])
 
-findAvg([1, 6, 3, 2]);
+console.log('----');
 
-// Function to get an array of odd numbers
-
-function oddNumbers() {
-  var arr = [];
-  for(var x = 1; x < 51; x++) {
+//Function to get an array of odd numbers in a given array
+function arrOdd(arr) {
+  oddarr = [];
+  for(var x = 0; x < arr.length; x++) {
+    if(arr[x] % 2 != 0) {
+      oddarr.push(arr[x]);
+    }
+  }
+  console.log(oddarr); //[1, 3, 5, 7]
+}
+arrOdd([1, 2, 3, 4, 5, 6, 7, 8])
+// Without passing in an array...
+function oddArr() {
+  arr = [];
+  for(x = 1; x <= 8; x++) {
     if(x % 2 != 0) {
       arr.push(x);
     }
   }
-  console.log(arr)
+  console.log(arr); //[1, 3, 5, 7]
 }
+oddArr();
 
-oddNumbers()
+console.log('----');
 
-// Function that takes an array and returns the number of values that are greater
-// than a specific number, Y in this problem.
-
-function greaterY(arr, Y) {
-  countarr = [];
+//Function to get elements in a given array greater than a passed value.
+function greaterThan(arr, y) {
+  var greaterarr = [];
   for(var x = 0; x < arr.length; x++) {
-    if(arr[x] > Y) {
-      countarr.push(arr[x]);
+    if(arr[x] > y) {
+      greaterarr.push(arr[x]);
     }
   }
-  console.log(countarr.length);
+  console.log(greaterarr); //[8, 5]
 }
+greaterThan([1, 2, 8, 3, 5], 4)
+// Without printing in array form...
+function greaterthanValue(arr, y) {
+  for(var i = 0; i < arr.length; i++) {
+    if(arr[i] > y) {
+      console.log(arr[i]); //8, 5
+    }
+  }
+}
+greaterthanValue([1, 2, 8, 3, 5], 4)
 
-greaterY([1, 2, 3, 4, 5, 7, 11], 3) // Outputs 4
+console.log('----');
 
 // There's an easier way to do the problem above:
-
 function greaterY(arr, Y) {
   count = 0;
   for(var x = 0; x < arr.length; x++) {
