@@ -100,36 +100,29 @@ array_SumElements(['Hello', 1, 'Goodbye', 2]);
 
 console.log('----');
 
-
-
-
-
-
-// Function that prints the maximum (highest) number in an array
-
-function findMax(arr) {
-    var max = '';
-    arrsorted = arr.sort(function(a, b){return a - b});
-    max = arrsorted.pop();
-    console.log(max);
-}
-
-findMax([1, 657, 2, 87]);
-
-// Another way to do the same thing above without the sort method is:
-
-function findMax(arr) {
+//Function to get highest number in a given array
+function arr_Max(arr) {
   var max = arr[0];
-  for(var x = 1; x<arr.length; x++) {
-    if(max < arr[x]) { // 'if(max < arr[x]); {' has semi colon, and results in
-                       // DIFFERENT output, we get 2 instead of 6.
-      max = arr[x];
+  for(var i = 1; i < arr.length; i++) {
+    if(max < arr[i]) { //Can't compare w previous element
+      max = arr[i]; //Updates (reassigns) var max
     }
   }
-  console.log(max);
+  console.log(max); //8
 }
+arr_Max([1, 4, 3, 2, 8, 6, -3]);
 
-findMax([1, 6, 3, 2]);
+console.log('----');
+
+//Function to get highest number in a given array with JS methods
+
+function findMax(arr) {
+  arr.sort(function(a, b){return a - b}); //MUTATES THE CALLER! Modifies arr
+  console.log(arr.pop()); //8, pop method returns arrary's last element
+}
+findMax([1, 4, 3, 2, 8, 6, -3]);
+
+console.log('----');
 
 // Let's explain why having a semi colon after the round brackets above gives is
 // a different output.
