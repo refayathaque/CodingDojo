@@ -183,7 +183,7 @@ function greaterThan(arr, y) {
   console.log(greaterarr); //[8, 5]
 }
 greaterThan([1, 2, 8, 3, 5], 4)
-// Without printing in array form...
+//Without printing in array form...
 function greaterthanValue(arr, y) {
   for(var i = 0; i < arr.length; i++) {
     if(arr[i] > y) {
@@ -195,160 +195,125 @@ greaterthanValue([1, 2, 8, 3, 5], 4)
 
 console.log('----');
 
-// There's an easier way to do the problem above:
-function greaterY(arr, Y) {
-  count = 0;
+//Function to get count of elements in a given array less than a passed value.
+function freqLessThan(arr, y) {
+  var freq = 0;
   for(var x = 0; x < arr.length; x++) {
-    if(arr[x] > Y) {
-      count++;
+    if(arr[x] < y) {
+      freq++; //Useful for keeping count
     }
   }
-  console.log(count);
+  console.log(freq); //3
 }
+freqLessThan([4, 8, 3, 2, 5], 5)
 
-greaterY([1, 4, 7, 6], 3)
+console.log('----');
 
-// Function that returns a new array with the SQUARED values of elements of array
-// passed in.
-
-function square(arr) {
-var squarearr = [];
-var sqvalue = 0;
-for(var x = 0; x < arr.length; x++) {
-  sqvalue = arr[x] * arr[x];
-  squarearr[x] = sqvalue;
+//Function to get squared values of elements in a given array
+function squared(arr) {
+  var squaredarr = [];
+  for(var x = 0; x < arr.length; x++) {
+    squaredarr.push(arr[x] * arr[x]);
+  }
+  console.log(squaredarr); //[4, 9, 16, 25]
 }
-  console.log(squarearr);
+squared([2, 3, 4, 5]);
+//Without printing in array form...
+function squaredelements(arr) {
+  for(var i = 0; i < arr.length; i++) {
+    console.log(Math.pow(arr[i], 2)); //[4, 9, 16, 25]
+  } //JS base-exponent method above...
 }
-
-square([2, 3, 4, 5])
-
-// There's an easier way to do what's above... if you want to just MODIFY the array
-// you originally passed in, and DON'T WANT A NEW SEPARATE ARRAY with squared values.
-
+squaredelements([2, 3, 4, 5]);
+//Without printing a new array, modifying original
 function square(arr) {
   for(var x = 0; x < arr.length; x++) {
-    arr[x] = arr[x] * arr[x]
+    arr[x] = arr[x] * arr[x];
   }
-  console.log(arr)
+  console.log(arr); //[4, 9, 16, 25]
 }
+square([2, 3, 4, 5]);
 
-square([6, 7, 8, 9])
+console.log('----');
 
-// Function that replaces negative integers in an array with zeros.
-
-function noNeg(arr) {
-for(var x = 0; x < arr.length; x++) { // For some reason this will also work
-                                      // without 'var'...
-  if(arr[x] < 0) {
-    arr[x] = 0;
+//Function that replaces negative integers in a given array with 'neg'
+function negToneg(arr) {
+  for(var x = 0; x < arr.length; x++) {
+    if(arr[x] < 0) {
+      arr[x] = 'neg';
+    }
   }
+  console.log(arr); //[1, 'neg', 3, 'neg']
 }
-  console.log(arr);
-}
+negToneg([1, -2, 3, -4]);
 
-noNeg([-2, 1, 2, 3, -6])
+console.log('----');
 
-// Function that returns a new array containing the MAX, MIN, and AVG of the
-// array passed in.
-
-function maxMinAvg(arr) {
-var sum = 0; // Must be changed to 'var sum = arr[0]' is same loop is used
-var avg = 0; // Can also just initialize array and populate it by
-             // doing 'var avg = sum/arr.length;'.
-var max = arr[0];
-var min = arr[0];
-var newarr = []; // Can also just initialize array and populate it by
-                 // doing 'var newarr = [max, min, avg];'.
-for(var i = 1; i < arr.length; i++) {
-  if(max < arr[i]) {
-    max = arr[i];
-  }
-}
-for(var i = 1; i < arr.length; i++) {
-  if(min > arr[i]) {
-    min = arr[i];
-  }
-}
-for(var i = 0; i < arr.length; i++) {
-  sum += arr[i];
-  avg = sum/arr.length;
-}
-newarr.push(max, min, avg); // Can also just initialize array and populate it by
-                            // doing 'var newarr = [max, min, avg];'.
-console.log(newarr);
-}
-maxMinAvg([1, 2, 3, 4, 5, 6]);
-
-// Refactoring the code above... We can just have one for loop since they're all
-// the same.
-
-function maxMinAvg(arr) {
+//Function that gets the maximum, minimum, and average of a given array
+function maxminavg(arr) {
+  var sum = 0;
   var min = arr[0];
   var max = arr[0];
-  var sum = arr[0];
-  for(var i = 1; i < arr.length; i++) {
-    if(max < arr[i]) {
-      max = arr[i];
+  for(x = 0; x < arr.length; x++) {
+    sum += arr[x];
+    if(min > arr[x]) {
+      min = arr[x];
     }
-    if(min > arr[i]) {
-      min = arr[i];
+    if(max < arr[x]) {
+      max = arr[x];
     }
-    sum += arr[i];
   }
-  var avg = sum/arr.length; // var can't be initialized above with other variables,
-                            // 'sum' is being modified by code in for loop, so this
-                            // has to be initialized AFTER the for loop.
-  var newarr = [max, min, avg];
-  console.log(newarr);
+  console.log([max, min, sum/arr.length]); //[5, 2, 3.5]
 }
+maxminavg([2, 3, 4, 5])
 
-maxMinAvg([1, 2, 3, 4, 5, 6]);
+console.log('----');
 
-// Function that swaps the first and last values of an array passed.
-
+//Function that swaps the first and last values of a given array
 function swap(arr) {
-  var swaptemp = arr[0];
-  arr[0] = arr[arr.length - 1];
-  arr[arr.length - 1] = swaptemp;
-  console.log(arr);
+  var temp = arr[0];
+  arr[0] = arr[arr.length - 1]
+  arr[arr.length -1] = temp
+  console.log(arr); //[5, 3, 4, 2]
 }
+swap([2, 3, 4, 5])
 
-swap([8, 7, 5, 2])
+console.log('----');
 
-// Function that replaces negative integers in array with string.
-
-function swapwithstring(arr) {
-for(var x = 0; x < arr.length; x++) {
-  if(arr[x] < 0) {
-    arr[x] = 'Dojo'
-  }
-}
-  console.log(arr);
-}
-
-swapwithstring([1, -2, 3, -4])
-
-// Function that goes through a range of numbers and gives the sum of all
-// odd numbers
-
-function sum_odd(arr) {
-  var sum = 0;
-  for(var i = 3; i < 10; i++) {
-    if(i % 2 != 0) {
-      sum += i;
+//Function that replaces negative integers in a given array with zeros.
+function negForzero(arr) {
+  for(i = 0; i < arr.length; i++) {
+    if(arr[i] < 0) {
+      arr[i] = 0;
     }
   }
-  console.log(sum); // Outputs 24
+  console.log(arr); //[0, 3, 4, 0]
 }
+negForzero([-2, 3, 4, -5])
 
-sum_odd([0]);
+console.log('----');
 
-// Example of 'break'; it exits out of the entire loop. It won't continue
-// iterations if inside a for loop block, will only execute the first iteration.
+//Function that goes through a range and gets the sum of all odd numbers
+function sumOdd() {
+  var sum = 0;
+  for(x = 0; x <= 5; x++) {
+    if(x % 2 != 0) {
+      sum += x;
+    }
+  }
+  console.log(sum); //9
+}
+sumOdd();
+
+console.log('----');
+
+/*Example of 'break' in the LAST LINE of a for loop block. 'Break' exits out
+of the for loop. It won't execute any more iterations when inside a for loop
+block. Only code preceeding the 'break' in the first iteration will be
+executed.*/
 
 for(var x = 17; x > 7; x--)
 {
-  console.log(x); // Outputs 17
+  console.log(x); //Outputs 17
   break;
 }
