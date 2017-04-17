@@ -321,6 +321,8 @@ console.log('----');
 
 //Function that moves all values left by one index and replaces last value with
 //0 in a given array
+
+
 function shiftArrayValsLeft(arr) {
   for(var x = 0; x < arr.length; x++) {
     arr[x] = arr[x + 1];
@@ -328,6 +330,6 @@ function shiftArrayValsLeft(arr) {
         arr[x] = 0;
       }
   }
-  console.log(arr);
+  console.log(arr); //Outputs [4, 6, 8, 0]
 }
 shiftArrayValsLeft([2, 4, 6, 8]);

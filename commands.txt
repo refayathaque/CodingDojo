@@ -1,0 +1,13 @@
+Mon Apr 17 mkdir test
+Mon Apr 17 touch test/index.html
+Mon Apr 17 touch test/styles.css
+Mon Apr 17 touch test/commands.txt
+Mon Apr 17 cp test/index.html test/index_2.html
+Mon Apr 17 rm test/styles.css 
+Mon Apr 17 mkdir destination
+Mon Apr 17 mv test/index_2.html destination/index_2.html
+Mon Apr 17 ls test/
+commands.txt	index.html
+Mon Apr 17 ls destination/
+index_2.html
+Mon Apr 17 rm -rf destination/

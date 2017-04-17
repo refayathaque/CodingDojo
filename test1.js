@@ -1,10 +1,11 @@
-function findAvg(arr) {
-  var sum = 0;
+function moveValuesLeft(arr) {
   for(var x = 0; x < arr.length; x++) {
-    sum += arr[x];
+    arr[x] = arr[x + 1];
+    if(x === arr.length - 1) {
+      arr[x] = 0;
+    }
   }
-  var avg = sum/arr.length;
-  console.log(avg);
+  console.log(arr);
 }
 
-findAvg([1, 2, 3, 4]);
+moveValuesLeft([1, 2, 3, 4, 5]);
