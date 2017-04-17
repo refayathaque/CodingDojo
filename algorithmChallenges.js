@@ -273,7 +273,7 @@ console.log('----');
 function swap(arr) {
   var temp = arr[0];
   arr[0] = arr[arr.length - 1]
-  arr[arr.length -1] = temp
+  arr[arr.length - 1] = temp
   console.log(arr); //[5, 3, 4, 2]
 }
 swap([2, 3, 4, 5])
