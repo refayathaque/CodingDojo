@@ -280,7 +280,7 @@ swap([2, 3, 4, 5])
 
 console.log('----');
 
-//Function that replaces negative integers in a given array with zeros.
+//Function that replaces negative integers in a given array with zeros
 function negForzero(arr) {
   for(i = 0; i < arr.length; i++) {
     if(arr[i] < 0) {
@@ -311,9 +311,23 @@ console.log('----');
 of the for loop. It won't execute any more iterations when inside a for loop
 block. Only code preceeding the 'break' in the first iteration will be
 executed.*/
-
 for(var x = 17; x > 7; x--)
 {
   console.log(x); //Outputs 17
   break;
 }
+
+console.log('----');
+
+//Function that moves all values left by one index and replaces last value with
+//0 in a given array
+function shiftArrayValsLeft(arr) {
+  for(var x = 0; x < arr.length; x++) {
+    arr[x] = arr[x + 1];
+      if(x === arr.length - 1) {
+        arr[x] = 0;
+      }
+  }
+  console.log(arr);
+}
+shiftArrayValsLeft([2, 4, 6, 8]);
