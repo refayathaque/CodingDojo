@@ -321,8 +321,6 @@ console.log('----');
 
 //Function that moves all values left by one index and replaces last value with
 //0 in a given array
-
-
 function shiftArrayValsLeft(arr) {
   for(var x = 0; x < arr.length; x++) {
     arr[x] = arr[x + 1];
@@ -333,3 +331,35 @@ function shiftArrayValsLeft(arr) {
   console.log(arr); //Outputs [4, 6, 8, 0]
 }
 shiftArrayValsLeft([2, 4, 6, 8]);
+
+console.log('----');
+
+//Function that reverses a given array
+function reverseArray(arr) {
+  var temp = 0;
+  for(var left = 0, right = arr.length - 1; left < right; left++, right--) {
+    temp = arr[right];
+    arr[right] = arr[left];
+    arr[left] = temp;
+  }
+  console.log(arr); //Outputs [5, 4, 3, 2, 1]
+}
+
+reverseArray([1, 2, 3, 4, 5]);
+
+console.log('----');
+
+//Another way to reverse a given array
+function reverseArray2(arr) {
+  var temp = 0;
+  for(var x = 0; x < (arr.length / 2); x++) {
+    temp = arr[(arr.length - 1) - x];
+    arr[(arr.length - 1) - x] = arr[x];
+    arr[x] = temp;
+  }
+  console.log(arr); //Outputs [5, 4, 3, 2, 1]
+}
+
+reverseArray2([1, 2, 3, 4, 5]);
+
+console.log('----')
