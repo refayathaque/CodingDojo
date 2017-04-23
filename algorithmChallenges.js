@@ -363,3 +363,24 @@ function reverseArray2(arr) {
 reverseArray2([1, 2, 3, 4, 5]);
 
 console.log('----')
+
+//Poor Kenny on page 25
+
+function poorkenny() {
+  var day = 0;
+  var string = "Kenny dies by ";
+  day = Math.trunc(Math.random()*100)
+    if (day <= 9) {
+      console.log(string + 'volcano'); }
+    else if (day >= 10 && day <= 24) {
+      console.log(string + 'tsunami'); }
+    else if (day >= 25 && day <= 44) {
+      console.log(string + 'earthquake'); }
+    else if (day >= 45 && day <= 70) {
+      console.log(string + 'blizzard'); }
+    else {
+      console.log(string + 'meteor'); }
+  console.log(day);
+}
+
+poorkenny();
