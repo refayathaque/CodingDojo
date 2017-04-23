@@ -369,7 +369,7 @@ console.log('----')
 function poorkenny() {
   var day = 0;
   var string = "Kenny dies by ";
-  day = Math.trunc(Math.random()*100)
+  day = Math.trunc(Math.random()*100) //JS 'Math' library,
     if (day <= 9) {
       console.log(string + 'volcano'); }
     else if (day >= 10 && day <= 24) {
@@ -382,5 +382,6 @@ function poorkenny() {
       console.log(string + 'meteor'); }
   console.log(day);
 }
-
 poorkenny();
+
+console.log('----')
